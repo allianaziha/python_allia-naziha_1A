@@ -2,14 +2,17 @@
 biodata = {}
 
 while True:
-    print("\n  MENU BIODATA  ")
-    print("1. Input biodata")
-    print("2. Tampilkan biodata")
-    print("3. Edit biodata")
-    print("4. Hapus biodata")
-    print("5. Keluar")
+    print("\n" + "=" * 35)
+    print("       APLIKASI BIODATA")
+    print("=" * 35)
+    print("[1] Input Biodata")
+    print("[2] Tampilkan Biodata")
+    print("[3] Edit Biodata")
+    print("[4] Hapus Biodata")
+    print("[5] Keluar")
+    print("-" * 35)
 
-    pilihan = input("Pilih menu (1/2/3/4/5): ")
+    pilihan = input("Masukkan pilihan menu: ")
 
     if pilihan == "1":
         biodata = {
@@ -20,25 +23,28 @@ while True:
             "Umur": input("Umur : "),
             "No Telepon": input("No Telepon : "),
         }
-        print("Biodata berhasil disimpan!")
+        print("\nBiodata berhasil disimpan!")
 
     elif pilihan == "2":
         if biodata == {}:
-            print("Belum ada biodata. Input dulu ya.")
+            print("\nBelum ada biodata. Input dulu ya.")
         else:
-            print("\n BIODATA ")
+            print("\n" + "=" * 35)
+            print("          DATA BIODATA")
+            print("=" * 35)
             for judul, isi in biodata.items():
-                print(f"{judul}: {isi}")
+                print(f"{judul:<16}: {isi}")
+            print("=" * 35)
 
     elif pilihan == "3":
         if biodata == {}:
-            print("Belum ada biodata yang bisa diedit.")
+            print("\nBelum ada biodata yang bisa diedit.")
         else:
-            print("\n EDIT BIODATA ")
+            print("\n--- EDIT BIODATA ---")
             for judul, isi in biodata.items():
                 print(f"{judul}: {isi}")
 
-            data = input("Masukkan nama data yang ingin diubah: ")
+            data = input("\nMasukkan nama data yang ingin diubah: ")
 
             if data in biodata:
                 biodata[data] = input(f"Masukkan {data} baru: ")
@@ -48,7 +54,7 @@ while True:
 
     elif pilihan == "4":
         if biodata == {}:
-            print("Belum ada biodata yang bisa dihapus.")
+            print("\nBelum ada biodata yang bisa dihapus.")
         else:
             konfirmasi = input("Yakin ingin menghapus biodata? (y/n): ")
 
@@ -59,8 +65,9 @@ while True:
                 print("Penghapusan dibatalkan.")
 
     elif pilihan == "5":
-        print("Terima kasih!")
+        print("\nTerima kasih telah menggunakan Aplikasi Biodata!")
         break
 
     else:
-        print("Pilihan tidak valid.")
+        print("\nPilihan tidak valid. Silakan coba lagi.")
+
