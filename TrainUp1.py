@@ -6,9 +6,10 @@ while True:
     print("1. Input biodata")
     print("2. Tampilkan biodata")
     print("3. Edit biodata")
-    print("4. Keluar")
+    print("4. Hapus biodata")
+    print("5. Keluar")
 
-    pilihan = input("Pilih menu (1/2/3/4): ")
+    pilihan = input("Pilih menu (1/2/3/4/5): ")
 
     if pilihan == "1":
         biodata = {
@@ -46,6 +47,18 @@ while True:
                 print("Data tidak ditemukan.")
 
     elif pilihan == "4":
+        if biodata == {}:
+            print("Belum ada biodata yang bisa dihapus.")
+        else:
+            konfirmasi = input("Yakin ingin menghapus biodata? (y/n): ")
+
+            if konfirmasi.lower() == "y":
+                biodata.clear()
+                print("Biodata berhasil dihapus!")
+            else:
+                print("Penghapusan dibatalkan.")
+
+    elif pilihan == "5":
         print("Terima kasih!")
         break
 
